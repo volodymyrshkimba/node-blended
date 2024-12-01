@@ -1,38 +1,137 @@
 [
   {
-    "name": "Incredible Cotton Salad",
-    "price": "659.79",
+    "name": "Small Plastic Car",
+    "price": "810.89",
+    "category": "Computers"
+  },
+  {
+    "name": "Rustic Bronze Cheese",
+    "price": "533.39",
+    "category": "Movies"
+  },
+  {
+    "name": "Elegant Frozen Sausages",
+    "price": "904.52",
+    "category": "Health"
+  },
+  {
+    "name": "Unbranded Bronze Car",
+    "price": "404.05",
+    "category": "Industrial",
+    "description": "Our deer-friendly Chips ensures wavy comfort for your pets"
+  },
+  {
+    "name": "Bespoke Cotton Car",
+    "price": "405.49",
+    "category": "Tools",
+    "description": "New gold Towels with ergonomic design for jam-packed comfort"
+  },
+  {
+    "name": "Awesome Concrete Pizza",
+    "price": "789.09",
+    "category": "Health",
+    "description": "Stylish Gloves designed to make you stand out with arid looks"
+  },
+  {
+    "name": "Practical Concrete Soap",
+    "price": "850.85",
+    "category": "Electronics",
+    "description": "Experience the grey brilliance of our Pants, perfect for outlying environments"
+  },
+  {
+    "name": "Modern Frozen Bike",
+    "price": "152.60",
+    "category": "Automotive",
+    "description": "Refined Sausages designed with Steel for austere performance"
+  },
+  {
+    "name": "Luxurious Granite Shoes",
+    "price": "689.45",
+    "category": "Electronics",
+    "description": "The User-friendly exuding time-frame Computer offers reliable performance and strict design"
+  },
+  {
+    "name": "Refined Concrete Bike",
+    "price": "413.09",
+    "category": "Games",
+    "description": "Featuring Erbium-enhanced technology, our Computer offers unparalleled untrue performance"
+  },
+  {
+    "name": "Rustic Cotton Table",
+    "price": "742.64",
     "category": "Baby",
-    "description": "Our horse-friendly Tuna ensures rotten comfort for your pets"
+    "description": "Featuring Carbon-enhanced technology, our Chips offers unparalleled grave performance"
   },
   {
-    "name": "Elegant Cotton Pants",
-    "price": "24.99",
-    "category": "Clothing",
-    "description": "Discover the koala-like agility of our Mouse, perfect for obedient users"
-  },
-  {
-    "name": "Elegant Granite Bacon",
-    "price": "214.55",
-    "category": "Garden",
-    "description": "Introducing the Italy-inspired Soap, blending light style with local craftsmanship"
-  },
-  {
-    "name": "Ergonomic Fresh Gloves",
-    "price": "780.20",
-    "category": "Baby",
-    "description": "Our smoky-inspired Mouse brings a taste of luxury to your acceptable lifestyle"
-  },
-  {
-    "name": "Rustic Metal Salad",
-    "price": "280.19",
-    "category": "Grocery",
-    "description": "New indigo Salad with ergonomic design for lustrous comfort"
-  },
-  {
-    "name": "Unbranded Bronze Shirt",
-    "price": "529.19",
+    "name": "Refined Rubber Tuna",
+    "price": "3.59",
     "category": "Home",
-    "description": "Featuring Palladium-enhanced technology, our Bacon offers unparalleled liquid performance"
+    "description": "Stylish Pants designed to make you stand out with long-term looks"
+  },
+  {
+    "name": "Unbranded Frozen Towels",
+    "price": "416.19",
+    "category": "Shoes",
+    "description": "The Libby Chair is the latest in a series of sure-footed products from Grimes, Sporer and Armstrong"
+  },
+  {
+    "name": "Licensed Bronze Gloves",
+    "price": "245.29",
+    "category": "Baby",
+    "description": "Discover the deadly new Soap with an exciting mix of Metal ingredients"
+  },
+  {
+    "name": "Unbranded Fresh Towels",
+    "price": "939.69",
+    "category": "Outdoors",
+    "description": "Ergonomic Ball made with Granite for all-day bony support"
+  },
+  {
+    "name": "Intelligent Frozen Computer",
+    "price": "933.20",
+    "category": "Automotive",
+    "description": "Discover the frog-like agility of our Gloves, perfect for linear users"
+  },
+  {
+    "name": "Oriental Metal Chips",
+    "price": "990.79",
+    "category": "Automotive",
+    "description": "New Chicken model with 32 GB RAM, 58 GB storage, and impractical features"
+  },
+  {
+    "name": "Modern Granite Shoes",
+    "price": "330.99",
+    "category": "Shoes",
+    "description": "Innovative Ball featuring livid technology and Bronze construction"
+  },
+  {
+    "name": "Ergonomic Frozen Bike",
+    "price": "752.42",
+    "category": "Home",
+    "description": "Experience the white brilliance of our Cheese, perfect for burdensome environments"
+  },
+  {
+    "name": "Fantastic Rubber Tuna",
+    "price": "758.75",
+    "category": "Movies",
+    "description": "Our bat-friendly Bacon ensures terrible comfort for your pets"
+  },
+  {
+    "name": "Generic Rubber Pizza",
+    "price": "963.95",
+    "category": "Home",
+    "description": "Professional-grade Mouse perfect for enraged training and recreational use"
+  },
+  {
+    "name": "Bespoke Metal Car",
+    "price": "511.29",
+    "category": "Outdoors",
+    "description": "Savor the savory essence in our Sausages, designed for rubbery culinary adventures"
+  },
+  {
+    "name": "Handmade Plastic Table",
+    "price": "339.85",
+    "category": "Jewelry",
+    "description": "The Archibald Sausages is the latest in a series of easy products from Kunde - Reinger"
   }
 ]

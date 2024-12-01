@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "generate": "node src/scripts/generateProducts",
-    "get-by-min-price": "node src/scripts/getProductsByMinPrice"
+    "get-by-min-price": "node src/scripts/getProductsByMinPrice",
+    "modify": "node src/scripts/modifyProducts",
+    "get-total-price": "node src/scripts/getTotalPrice",
+    "get-categories": "node src/scripts/getProductCategories",
+    "create-product-files": "node src/scripts/createProductFiles"
   },
   "keywords": [],
   "author": "Volodymyr Shkimba <shkimbavova@gmail.com>",
