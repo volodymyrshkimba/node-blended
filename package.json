@@ -1,0 +1,17 @@
+{
+  "name": "blended",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "generate": "node src/scripts/generateProducts",
+    "get-by-min-price": "node src/scripts/getProductsByMinPrice"
+  },
+  "keywords": [],
+  "author": "Volodymyr Shkimba <shkimbavova@gmail.com>",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^9.2.0"
+  }
+}
