@@ -9,6 +9,7 @@
     "modify": "node src/scripts/modifyProducts",
     "get-total-price": "node src/scripts/getTotalPrice",
     "get-categories": "node src/scripts/getProductCategories",
+    "show-products-by-category": "node src/scripts/showProductsByCategories",
     "create-product-files": "node src/scripts/createProductFiles"
   },
   "keywords": [],
