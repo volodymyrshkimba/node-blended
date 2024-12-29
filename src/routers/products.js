@@ -5,10 +5,13 @@ import {
   getProductByIdController,
   patchProductController,
 } from '../controllers/products.js';
+import { authenticate } from '../middlewares/authenticate.js';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 import { Router } from 'express';
 
 const router = Router();
+
+router.use(authenticate);
 
 router.get('/', ctrlWrapper(getAllProductsController));
 

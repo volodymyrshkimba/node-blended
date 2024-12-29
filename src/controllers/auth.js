@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 import {
   createActiveSession,
   createUser,
+  deleteSessionBySessionIdAndRefreshToken,
   deleteSessionByUserId,
   findUserByEmail,
 } from '../services/auth.js';
@@ -57,4 +58,15 @@ export const loginUserController = async (req, res) => {
       accessToken: session.accessToken,
     },
   });
+};
+
+export const logoutUserController = async (req, res) => {
+  const { sessionId, refreshToken } = req.cookies;
+
+  await deleteSessionBySessionIdAndRefreshToken(sessionId, refreshToken);
+
+  res.clearCookie('sessionId');
+  res.clearCookie('refreshToken');
+
+  res.status(204).send();
 };

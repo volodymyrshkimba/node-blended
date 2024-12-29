@@ -3,6 +3,7 @@ import { validateBody } from '../utils/validateBody.js';
 import { loginSchema, registerSchema } from '../validation/users.js';
 import {
   loginUserController,
+  logoutUserController,
   registerUserController,
 } from '../controllers/auth.js';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
@@ -20,5 +21,7 @@ router.post(
   validateBody(loginSchema),
   ctrlWrapper(loginUserController),
 );
+
+router.post('/logout', ctrlWrapper(logoutUserController));
 
 export default router;

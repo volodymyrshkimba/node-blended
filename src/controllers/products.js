@@ -9,7 +9,8 @@ import {
 import createHttpError from 'http-errors';
 
 export const getAllProductsController = async (req, res) => {
-  const products = await getAllProducts();
+  const userId = req.user._id;
+  const products = await getAllProducts(userId);
 
   res.json({
     status: 200,
@@ -19,7 +20,8 @@ export const getAllProductsController = async (req, res) => {
 };
 
 export const createProductController = async (req, res) => {
-  const product = await createProduct(req.body);
+  const userId = req.user._id;
+  const product = await createProduct(req.body, userId);
 
   res.status(201).json({
     status: 201,
@@ -29,8 +31,9 @@ export const createProductController = async (req, res) => {
 };
 
 export const getProductByIdController = async (req, res) => {
+  const userId = req.user._id;
   const { productId } = req.params;
-  const product = await getProductById(productId);
+  const product = await getProductById(productId, userId);
 
   if (!product) {
     throw createHttpError(404, 'Product not found');
@@ -44,8 +47,9 @@ export const getProductByIdController = async (req, res) => {
 };
 
 export const deleteProductController = async (req, res) => {
+  const userId = req.user._id;
   const { productId } = req.params;
-  const product = await deleteProduct(productId);
+  const product = await deleteProduct(productId, userId);
 
   if (!product) {
     throw createHttpError(404, 'Product not found');
@@ -57,8 +61,9 @@ export const deleteProductController = async (req, res) => {
 };
 
 export const patchProductController = async (req, res) => {
+  const userId = req.user._id;
   const { productId } = req.params;
-  const product = await updateProduct(productId, req.body);
+  const product = await updateProduct(productId, req.body, userId);
 
   if (!product) {
     throw createHttpError(404, 'Product not found');
