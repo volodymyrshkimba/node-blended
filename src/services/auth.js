@@ -35,27 +35,10 @@ export const createUser = async (userData) => {
   return updateUserWithToken(user._id);
 };
 
-// export const deleteSessionByUserId = (userId) =>
-//   SessionsCollection.deleteOne({ userId });
+export const clearToken = async (id) => {
+  await UsersCollection.findByIdAndUpdate(id, {
+    token: '',
+  });
+};
 
-// export const createActiveSession = async (userId) => {
-//   const session = createSession();
-//   const createdSession = await SessionsCollection.create({
-//     userId,
-//     ...session,
-//   });
-
-//   return createdSession;
-// };
-
-// export const deleteSessionBySessionIdAndRefreshToken = (
-//   sessionId,
-//   refreshToken,
-// ) => {
-//   return SessionsCollection.deleteOne({ _id: sessionId, refreshToken });
-// };
-
-// export const findSessionByAccessToken = (accessToken) =>
-//   SessionsCollection.findOne({ accessToken });
-
-// export const findUserById = (_id) => UsersCollection.findById(_id);
+export const findUserById = (id) => UsersCollection.findById(id);

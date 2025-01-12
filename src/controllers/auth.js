@@ -2,6 +2,7 @@ import createHttpError from 'http-errors';
 import bcrypt from 'bcrypt';
 
 import {
+  clearToken,
   createUser,
   findUserByEmail,
   updateUserWithToken,
@@ -48,13 +49,14 @@ export const loginUserController = async (req, res) => {
   });
 };
 
-// export const logoutUserController = async (req, res) => {
-//   const { sessionId, refreshToken } = req.cookies;
+export const logoutUserController = async (req, res) => {
+  await clearToken(req.user._id);
+  res.status(204).send();
+};
 
-//   await deleteSessionBySessionIdAndRefreshToken(sessionId, refreshToken);
-
-//   res.clearCookie('sessionId');
-//   res.clearCookie('refreshToken');
-
-//   res.status(204).send();
-// };
+export const currentUserController = (req, res) => {
+  res.status(200).json({
+    name: req.user.name,
+    email: req.user.email,
+  });
+};
