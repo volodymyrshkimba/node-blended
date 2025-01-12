@@ -2,27 +2,20 @@ import createHttpError from 'http-errors';
 import bcrypt from 'bcrypt';
 
 import {
-  createActiveSession,
   createUser,
-  deleteSessionBySessionIdAndRefreshToken,
-  deleteSessionByUserId,
   findUserByEmail,
+  updateUserWithToken,
 } from '../services/auth.js';
-import { setCookie } from '../utils/setCookie.js';
 
 export const registerUserController = async (req, res) => {
   const user = await findUserByEmail(req.body.email);
-
   if (user) {
     throw createHttpError(409, 'Email in use');
   }
-
   const createdUser = await createUser(req.body);
-
   res.status(201).json({
-    status: 201,
-    message: 'Successfully registered a user!',
-    data: {
+    token: createdUser.token,
+    user: {
       name: createdUser.name,
       email: createdUser.email,
     },
@@ -31,7 +24,6 @@ export const registerUserController = async (req, res) => {
 
 export const loginUserController = async (req, res) => {
   const user = await findUserByEmail(req.body.email);
-
   if (!user) {
     throw createHttpError(401, 'Email or password wrong');
   }
@@ -45,28 +37,24 @@ export const loginUserController = async (req, res) => {
     throw createHttpError(401, 'Email or password wrong');
   }
 
-  await deleteSessionByUserId(user._id);
-
-  const session = await createActiveSession(user._id);
-
-  setCookie(res, session);
+  const userWithToken = await updateUserWithToken(user._id);
 
   res.json({
-    status: 200,
-    message: 'Successfully logged in an user!',
-    data: {
-      accessToken: session.accessToken,
+    token: userWithToken.token,
+    user: {
+      name: userWithToken.name,
+      email: userWithToken.email,
     },
   });
 };
 
-export const logoutUserController = async (req, res) => {
-  const { sessionId, refreshToken } = req.cookies;
+// export const logoutUserController = async (req, res) => {
+//   const { sessionId, refreshToken } = req.cookies;
 
-  await deleteSessionBySessionIdAndRefreshToken(sessionId, refreshToken);
+//   await deleteSessionBySessionIdAndRefreshToken(sessionId, refreshToken);
 
-  res.clearCookie('sessionId');
-  res.clearCookie('refreshToken');
+//   res.clearCookie('sessionId');
+//   res.clearCookie('refreshToken');
 
-  res.status(204).send();
-};
+//   res.status(204).send();
+// };
