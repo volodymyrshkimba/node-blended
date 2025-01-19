@@ -42,3 +42,6 @@ export const clearToken = async (id) => {
 };
 
 export const findUserById = (id) => UsersCollection.findById(id);
+
+export const findUserByIdAndToken = (_id, token) =>
+  UsersCollection.findOne({ _id, token });

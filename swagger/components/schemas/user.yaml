@@ -1,0 +1,24 @@
+type: object
+required:
+  - token
+  - user
+properties:
+  token:
+    description: "User's token"
+    type: string
+    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OGQzNThkOGY5NTMyZTkyYzk2NzJiYSIsImlhdCI6MTczNzMwNzUzM30.dhnK99QSQCowwluGKu3t0nJmQMiOgE7bvcKagHobHvU
+  user:
+    description: "User's info"
+    type: object
+    required:
+      - name
+      - email
+    properties:
+      name:
+        description: "User's name"
+        type: string
+        example: 'John Doe'
+      email:
+        description: "User's email"
+        type: string
+        example: 'example@gmail.com'

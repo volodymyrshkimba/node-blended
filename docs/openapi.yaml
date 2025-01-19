@@ -5,10 +5,10 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  description: This is a documentation of students app
+  description: This is a documentation of myContacts app
 tags:
-  - name: Students
-    description: Operations about users.
+  - name: Contacts
+    description: Operations about contacts.
   - name: Auth
     description: Auth operations.
 servers:
@@ -18,6 +18,25 @@ paths:
   /contacts:
     get:
       $ref: ../swagger/paths/contacts/get.yaml
+    post:
+      $ref: ../swagger/paths/contacts/post.yaml
+  /contacts/{id}:
+    patch:
+      $ref: ../swagger/paths/contacts/{id}/patch.yaml
+    delete:
+      $ref: ../swagger/paths/contacts/{id}/delete.yaml
+  /users/signup:
+    post:
+      $ref: ../swagger/paths/auth/signup/post.yaml
+  /users/login:
+    post:
+      $ref: ../swagger/paths/auth/login/post.yaml
+  /users/logout:
+    post:
+      $ref: ../swagger/paths/auth/logout/post.yaml
+  /users/current:
+    get:
+      $ref: ../swagger/paths/auth/current/get.yaml
 components:
   securitySchemes:
     bearerAuth:

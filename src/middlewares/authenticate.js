@@ -1,5 +1,5 @@
 import createHttpError from 'http-errors';
-import { findUserById } from '../services/auth.js';
+import { findUserByIdAndToken } from '../services/auth.js';
 import jwt from 'jsonwebtoken';
 import { env } from '../utils/env.js';
 
@@ -20,7 +20,7 @@ export const authenticate = async (req, res, next) => {
 
   const { id } = jwt.verify(token, env('JWT_SECRET'));
 
-  const user = await findUserById(id);
+  const user = await findUserByIdAndToken(id, token);
 
   if (!user) {
     next(createHttpError(401));

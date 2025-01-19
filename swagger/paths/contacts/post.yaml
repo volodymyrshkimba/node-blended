@@ -1,0 +1,36 @@
+tags:
+  - Contacts
+summary: Create contact
+operationId: createContact
+description: 'Create a contact with payload'
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - name
+          - number
+        properties:
+          name:
+            description: "Contact's name"
+            type: string
+            example: 'John Doe'
+          number:
+            description: "Contact's number"
+            type: string
+            example: '122414112'
+responses:
+  '201':
+    description: Created contact
+    content:
+      application/json:
+        schema:
+          type: object
+          $ref: '../../components/schemas/contact.yaml'
+  '401':
+    $ref: '../../components/responses/401.yaml'
+  '500':
+    $ref: '../../components/responses/500.yaml'

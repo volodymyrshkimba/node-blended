@@ -1,8 +1,8 @@
 tags:
   - Auth
-summary: Login user
-operationId: loginUser
-description: 'Login a user with payload'
+summary: Create user
+operationId: signupUser
+description: 'Create a user with payload'
 security: []
 requestBody:
   content:
@@ -10,9 +10,14 @@ requestBody:
       schema:
         type: object
         required:
+          - name
           - email
           - password
         properties:
+          name:
+            description: "User's name"
+            type: string
+            example: 'John Doe'
           email:
             description: "User's email"
             type: string
@@ -22,14 +27,14 @@ requestBody:
             type: string
             example: example123
 responses:
-  '200':
-    description: Logged in user
+  '201':
+    description: Created user
     content:
       application/json:
         schema:
           type: object
           $ref: '../../../components/schemas/user.yaml'
-  '401':
-    $ref: '../../../components/responses/login/401.yaml'
+  '409':
+    $ref: '../../../components/responses/409.yaml'
   '500':
     $ref: '../../../components/responses/500.yaml'
