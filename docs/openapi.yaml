@@ -12,8 +12,8 @@ tags:
   - name: Auth
     description: Auth operations.
 servers:
+  - url: https://mycontacts-p148.onrender.com
   - url: http://localhost:3000
-  - url: https://example.com/api/v1
 paths:
   /contacts:
     get:
