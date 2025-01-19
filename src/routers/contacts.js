@@ -2,24 +2,35 @@ import { Router } from 'express';
 import { authenticate } from '../middlewares/authenticate.js';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 import {
-  creteContactController,
+  createContactController,
   deleteContactController,
   getAllContactsController,
+  patchContactController,
 } from '../controllers/contacts.js';
 import { validateBody } from '../utils/validateBody.js';
-import { createContactSchema } from '../validation/contacts.js';
+import {
+  createContactSchema,
+  updateContactSchema,
+} from '../validation/contacts.js';
 
 const router = Router();
 
-router.get('/', authenticate, ctrlWrapper(getAllContactsController));
+router.use(authenticate);
+
+router.get('/', ctrlWrapper(getAllContactsController));
 
 router.post(
   '/',
-  authenticate,
   validateBody(createContactSchema),
-  ctrlWrapper(creteContactController),
+  ctrlWrapper(createContactController),
 );
 
-router.delete('/contactId', authenticate, ctrlWrapper(deleteContactController));
+router.patch(
+  '/:contactId',
+  validateBody(updateContactSchema),
+  ctrlWrapper(patchContactController),
+);
+
+router.delete('/:contactId', ctrlWrapper(deleteContactController));
 
 export default router;

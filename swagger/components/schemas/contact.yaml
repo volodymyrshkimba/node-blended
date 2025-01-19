@@ -1,0 +1,23 @@
+type: object
+required:
+  - _id
+  - name
+  - number
+  - userId
+properties:
+  _id:
+    description: "Contact's id"
+    type: string
+    example: 65e4decdd286b30065d54af9
+  name:
+    description: "Contact's name"
+    type: string
+    example: 'John Doe'
+  number:
+    description: "Contact's number"
+    type: string
+    example: 12124114
+  userId:
+    description: "Contact's owner age"
+    type: string
+    example: 90mkdecdd286b30065d54af8
