@@ -1,0 +1,44 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: myContacts
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  description: This is a documentation of myContacts app
+tags:
+  - name: Contacts
+    description: Operations about contacts.
+  - name: Auth
+    description: Auth operations.
+servers:
+  - url: https://mycontacts-p148.onrender.com
+  - url: http://localhost:3000
+paths:
+  /contacts:
+    get:
+      $ref: ../swagger/paths/contacts/get.yaml
+    post:
+      $ref: ../swagger/paths/contacts/post.yaml
+  /contacts/{id}:
+    patch:
+      $ref: ../swagger/paths/contacts/{id}/patch.yaml
+    delete:
+      $ref: ../swagger/paths/contacts/{id}/delete.yaml
+  /users/signup:
+    post:
+      $ref: ../swagger/paths/auth/signup/post.yaml
+  /users/login:
+    post:
+      $ref: ../swagger/paths/auth/login/post.yaml
+  /users/logout:
+    post:
+      $ref: ../swagger/paths/auth/logout/post.yaml
+  /users/current:
+    get:
+      $ref: ../swagger/paths/auth/current/get.yaml
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,20 @@
+tags:
+  - Contacts
+summary: Get list of contacts
+operationId: getContacts
+description: 'Get list of contacts with this endpoint'
+security:
+  - bearerAuth: []
+responses:
+  '200':
+    description: Successfully found contacts!
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: ../../components/schemas/contact.yaml
+  '401':
+    $ref: '../../components/responses/401.yaml'
+  '500':
+    $ref: '../../components/responses/500.yaml'

@@ -1,0 +1,37 @@
+{
+  "name": "start-files-blended-node-2-3modules",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "start": "node ./src/index.js",
+    "dev": "nodemon src/index.js",
+    "build": "npm run build-docs",
+    "build-docs": "redocly bundle docs/openapi.yaml --ext json -o docs/swagger.json",
+    "preview-docs": "redocly preview-docs"
+  },
+  "keywords": [],
+  "author": "Alexander Repeta <a.repeta@goit.global>",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "@redocly/cli": "^1.27.2",
+    "eslint": "^9.3.0",
+    "globals": "^15.3.0",
+    "nodemon": "^3.1.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "http-errors": "^2.0.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.0",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
